@@ -5,10 +5,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
-import cg.stevendende.gadsleaderboard.LearningLeaderFragment;
-import cg.stevendende.gadsleaderboard.ScoreLeaderFragment;
+import cg.stevendende.gadsleaderboard.ui.fragments.LearningLeaderFragment;
+import cg.stevendende.gadsleaderboard.ui.fragments.ScoreLeaderFragment;
 
 public class MainAdapter extends FragmentPagerAdapter {
 

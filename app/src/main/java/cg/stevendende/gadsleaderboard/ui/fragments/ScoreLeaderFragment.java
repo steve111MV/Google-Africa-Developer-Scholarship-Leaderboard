@@ -1,4 +1,4 @@
-package cg.stevendende.gadsleaderboard;
+package cg.stevendende.gadsleaderboard.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -20,6 +20,7 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
+import cg.stevendende.gadsleaderboard.R;
 import cg.stevendende.gadsleaderboard.databinding.FragmentLearningLeaderBinding;
 import cg.stevendende.gadsleaderboard.databinding.FragmentScoreLeaderBinding;
 import cg.stevendende.gadsleaderboard.databinding.ItemScoreLeaderBinding;

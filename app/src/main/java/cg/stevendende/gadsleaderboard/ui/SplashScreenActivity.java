@@ -1,4 +1,4 @@
-package cg.stevendende.gadsleaderboard;
+package cg.stevendende.gadsleaderboard.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,9 @@ import android.os.Handler;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.ViewCompat;
 
+import cg.stevendende.gadsleaderboard.MainActivity;
 import cg.stevendende.gadsleaderboard.databinding.ActivitySplashBinding;
 
 public class SplashScreenActivity extends AppCompatActivity {
