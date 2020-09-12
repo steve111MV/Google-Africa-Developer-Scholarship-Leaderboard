@@ -30,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
-        mAdapter = new MainAdapter(getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        mAdapter.TITLES = getResources().getStringArray(R.array.main_tabs_titles);
-        binding.contentMain.viewPager.setAdapter(mAdapter);
+        mAdapter = new MainAdapter(getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, getResources().getStringArray(R.array.main_tabs_titles));
 
-        binding.tabLayout.setupWithViewPager(binding.contentMain.viewPager);
+        binding.viewPager.setAdapter(mAdapter);
+
+        binding.tabLayout.setupWithViewPager(binding.viewPager);
 
         binding.submitProjectButton.setOnClickListener(new View.OnClickListener() {
             @Override

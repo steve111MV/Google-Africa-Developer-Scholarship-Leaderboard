@@ -5,15 +5,18 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import cg.stevendende.gadsleaderboard.LearningLeaderFragment;
+import cg.stevendende.gadsleaderboard.ScoreLeaderFragment;
 
 public class MainAdapter extends FragmentPagerAdapter {
 
     public String[] TITLES;
 
-    public MainAdapter(@NonNull FragmentManager fm, int behavior) {
+    public MainAdapter(@NonNull FragmentManager fm, int behavior, String[] titles) {
         super(fm, behavior);
+        TITLES = titles;
     }
 
     @Override
@@ -29,7 +32,7 @@ public class MainAdapter extends FragmentPagerAdapter {
                 return new LearningLeaderFragment();
 
             default:
-                return new LearningLeaderFragment();
+                return new ScoreLeaderFragment();
 
         }
     }

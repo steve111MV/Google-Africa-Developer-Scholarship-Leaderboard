@@ -4,5 +4,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/recyclerview_padding"
-    android:paddingTop="@dimen/recyclerview_learner_top_padding"
     android:id="@+id/recyclerView"/>

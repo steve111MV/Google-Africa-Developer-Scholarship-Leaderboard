@@ -21,41 +21,48 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.List;
 
 import cg.stevendende.gadsleaderboard.databinding.FragmentLearningLeaderBinding;
+import cg.stevendende.gadsleaderboard.databinding.FragmentScoreLeaderBinding;
+import cg.stevendende.gadsleaderboard.databinding.ItemScoreLeaderBinding;
 import cg.stevendende.gadsleaderboard.databinding.ItemTopLearnerBinding;
 import cg.stevendende.gadsleaderboard.interfaces.GadsApiService;
 import cg.stevendende.gadsleaderboard.models.HoursTopLearner;
+import cg.stevendende.gadsleaderboard.models.ScoreLeader;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LearningLeaderFragment extends Fragment {
+public class ScoreLeaderFragment extends Fragment {
 
-    FragmentLearningLeaderBinding binding;
+    FragmentScoreLeaderBinding binding;
 
-    List<HoursTopLearner> developersList;
-    LearningRecyclerAdapter mRecyclerAdapter;
+    List<ScoreLeader> developersList;
+    ScoreRecyclerAdapter mRecyclerAdapter;
     GadsApiService service;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        binding = FragmentLearningLeaderBinding.inflate(getLayoutInflater());
+        binding = FragmentScoreLeaderBinding.inflate(getLayoutInflater());
 
-        mRecyclerAdapter = new LearningRecyclerAdapter(getActivity());
+        mRecyclerAdapter = new ScoreRecyclerAdapter(getActivity());
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         binding.recyclerView.setAdapter(mRecyclerAdapter);
         binding.recyclerView.setHasFixedSize(true);
 
-
-        loadTopLearningLeaders();
         return binding.getRoot();
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
-    private void loadTopLearningLeaders(){
+        loadScoreLeaders();
+    }
+
+    private void loadScoreLeaders(){
 
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
@@ -63,10 +70,10 @@ public class LearningLeaderFragment extends Fragment {
                 .build();
 
         service = retrofit.create(GadsApiService.class);
-        service.getTopLearners().enqueue(new Callback<List<HoursTopLearner>>() {
+        service.getScoreLeaders().enqueue(new Callback<List<ScoreLeader>>() {
             @Override
-            public void onResponse(Call<List<HoursTopLearner>> call, retrofit2.Response<List<HoursTopLearner>> response) {
-                Log.i("cases", response.body().get(0).getCountry());
+            public void onResponse(Call<List<ScoreLeader>> call, retrofit2.Response<List<ScoreLeader>> response) {
+                Log.i("scores", response.body().get(0).getCountry());
 
                 //bind data
                 developersList = response.body();
@@ -74,7 +81,7 @@ public class LearningLeaderFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<HoursTopLearner>> call, Throwable t) {
+            public void onFailure(Call<List<ScoreLeader>> call, Throwable t) {
 
             }
         });
@@ -83,19 +90,19 @@ public class LearningLeaderFragment extends Fragment {
 
 
 
-    public class LearningRecyclerAdapter extends RecyclerView.Adapter<LearningRecyclerAdapter.LearningLeaderViewHolder> {
+    public class ScoreRecyclerAdapter extends RecyclerView.Adapter<ScoreRecyclerAdapter.ScoreLeaderViewHolder> {
 
         Context context;
 
-        public LearningRecyclerAdapter(Context context ){
+        public ScoreRecyclerAdapter(Context context ){
             this.context = context;
         }
 
         @NonNull
         @Override
-        public  LearningLeaderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            ItemTopLearnerBinding binding = ItemTopLearnerBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
-            return new LearningLeaderViewHolder(binding);
+        public  ScoreLeaderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            ItemScoreLeaderBinding binding = ItemScoreLeaderBinding.inflate(LayoutInflater.from(context), parent, false);
+            return new ScoreLeaderViewHolder(binding);
         }
 
         @Override
@@ -104,11 +111,10 @@ public class LearningLeaderFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull  LearningLeaderViewHolder holder, int position) {
-
+        public void onBindViewHolder(@NonNull  ScoreLeaderViewHolder holder, int position) {
             holder.itemBinding.name.setText(developersList.get(position).getName());
             holder.itemBinding.country.setText(developersList.get(position).getCountry());
-            holder.itemBinding.hours.setText(developersList.get(position).getHours()+"");
+            holder.itemBinding.skilliq.setText(developersList.get(position).getScore()+"");
 
             Glide.with(getActivity())
                     .load(developersList.get(position).getBadgeUrl())
@@ -118,10 +124,10 @@ public class LearningLeaderFragment extends Fragment {
                     .into(holder.itemBinding.photo);
         }
 
-        class LearningLeaderViewHolder extends RecyclerView.ViewHolder{
-            ItemTopLearnerBinding itemBinding;
+        class ScoreLeaderViewHolder extends RecyclerView.ViewHolder{
+            ItemScoreLeaderBinding itemBinding;
 
-            public LearningLeaderViewHolder(ItemTopLearnerBinding binding) {
+            public ScoreLeaderViewHolder(ItemScoreLeaderBinding binding) {
                 super(binding.getRoot());
                 this.itemBinding = binding;
             }

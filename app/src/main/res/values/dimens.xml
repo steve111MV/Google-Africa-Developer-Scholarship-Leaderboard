@@ -2,6 +2,10 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="button_corner_radius">10dp</dimen>
     <dimen name="text_size_15sp">15sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
     <dimen name="toolbar_button_start_padding">40dp</dimen>
     <dimen name="toolbar_button_end_padding">20dp</dimen>
+    <dimen name="recyclerview_padding">10dp</dimen>
+    <dimen name="recyclerview_learner_top_padding">15dp</dimen>
+    <dimen name="nameTextSize">16sp</dimen>
 </resources>
