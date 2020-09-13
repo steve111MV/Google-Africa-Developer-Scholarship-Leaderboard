@@ -1,5 +1,6 @@
-package cg.stevendende.gadsleaderboard;
+package cg.stevendende.gadsleaderboard.ui;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import cg.stevendende.gadsleaderboard.R;
 import cg.stevendende.gadsleaderboard.adapters.MainAdapter;
 import cg.stevendende.gadsleaderboard.databinding.ActivityMainBinding;
 
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         binding.submitProjectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(MainActivity.this, SubmitActivity.class));
             }
         });
 

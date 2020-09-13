@@ -46,7 +46,7 @@ public class SubmitActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         binding.buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +99,6 @@ public class SubmitActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     displayAlertDialog(R.drawable.success_image, getResources().getString(R.string.alert_success));
                 } else {
-
                     displayAlertDialog(R.drawable.warning_sign, getResources().getString(R.string.alert_failure));
                 }
                 //show dialogs
@@ -111,7 +110,6 @@ public class SubmitActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void displayAlertDialog(int image, String title){
 

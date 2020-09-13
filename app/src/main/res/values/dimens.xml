@@ -8,4 +8,9 @@
     <dimen name="recyclerview_padding">10dp</dimen>
     <dimen name="recyclerview_learner_top_padding">15dp</dimen>
     <dimen name="nameTextSize">16sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="submit_name_horizontal_margin">10dp</dimen>
+    <dimen name="edittext_padding">10dp</dimen>
+    <dimen name="text_input_bg_radius">6dp</dimen>
+    <dimen name="submit_title_top_margin">15dp</dimen>
 </resources>

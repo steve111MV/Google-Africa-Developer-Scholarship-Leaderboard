@@ -7,7 +7,7 @@
     android:layout_margin="10dp"
     android:fitsSystemWindows="false"
     android:background="@drawable/app_background_shape"
-    tools:context="cg.stevendende.gadsleaderboard.MainActivity">
+    tools:context="cg.stevendende.gadsleaderboard.ui.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

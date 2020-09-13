@@ -8,7 +8,6 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
 
-import cg.stevendende.gadsleaderboard.MainActivity;
 import cg.stevendende.gadsleaderboard.databinding.ActivitySplashBinding;
 
 public class SplashScreenActivity extends AppCompatActivity {

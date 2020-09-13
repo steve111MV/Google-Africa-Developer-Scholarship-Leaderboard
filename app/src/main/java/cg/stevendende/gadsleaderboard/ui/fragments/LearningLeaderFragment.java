@@ -33,7 +33,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LearningLeaderFragment extends Fragment {
 
     FragmentLearningLeaderBinding binding;
-
     List<HoursTopLearner> developersList;
     LearningRecyclerAdapter mRecyclerAdapter;
     GadsApiService service;
@@ -43,13 +42,11 @@ public class LearningLeaderFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         binding = FragmentLearningLeaderBinding.inflate(getLayoutInflater());
-
         mRecyclerAdapter = new LearningRecyclerAdapter(getActivity());
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         binding.recyclerView.setAdapter(mRecyclerAdapter);
         binding.recyclerView.setHasFixedSize(true);
-
 
         loadTopLearningLeaders();
         return binding.getRoot();

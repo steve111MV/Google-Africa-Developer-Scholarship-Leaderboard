@@ -10,6 +10,12 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="submit">Submit</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="project_on_github_link">Project on GITHUB (likn)</string>
+    <string name="alert_failure">Submission not Successful</string>
+    <string name="alert_success">Submission Successful</string>
 
     <array name="main_tabs_titles">
         <item>Learning Leaders</item>
