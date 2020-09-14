@@ -51,14 +51,7 @@ public class SubmitActivity extends AppCompatActivity {
         binding.buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if ( !TextUtils.isEmpty(binding.editFirstName.getText()) &&
-                     !TextUtils.isEmpty(binding.editLastName.getText()) &&
-                     !TextUtils.isEmpty(binding.editEmail.getText()) &&
-                     !TextUtils.isEmpty(binding.editGithubLink.getText())
-                ) {
-                    submitProject();
-                }
+                submitProject();
             }
         });
 

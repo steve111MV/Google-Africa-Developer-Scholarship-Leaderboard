@@ -7,7 +7,7 @@
     <color name="tabUnselectedColor">#D1D1D1</color>
     <color name="vPagerBg">#F1F1F1</color>
 
-
+    <color name="textColorBlack">#414141</color>
     <color name="colorSuccess">#07A10E</color>
     <color name="colorError">#F60B0B</color>
     <color name="colorWarning">#7C6A58</color>

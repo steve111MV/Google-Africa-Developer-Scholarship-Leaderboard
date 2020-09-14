@@ -19,17 +19,13 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="10dp"
             android:layout_marginTop="10dp"
             >
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginTop="20dp"
                 android:gravity="center"
-
                 android:orientation="horizontal">
                 <ImageView
                     android:layout_width="wrap_content"
@@ -91,12 +87,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:inputType="text"
-
+                android:textColor="@color/textColorBlack"
+                android:padding="@dimen/edittext_padding"
                 android:layout_marginEnd="@dimen/submit_name_horizontal_margin"
                 android:layout_marginRight="@dimen/submit_name_horizontal_margin"
                 android:background="@drawable/text_input_background"
                 android:hint="@string/first_name"
-                android:padding="@dimen/edittext_padding"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputEditText
@@ -105,11 +101,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:inputType="text"
+                android:textColor="@color/textColorBlack"
+                android:padding="@dimen/edittext_padding"
                 android:layout_marginStart="@dimen/submit_name_horizontal_margin"
                 android:layout_marginLeft="@dimen/submit_name_horizontal_margin"
                 android:background="@drawable/text_input_background"
                 android:hint="@string/last_name"
-                android:padding="@dimen/edittext_padding"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -121,6 +118,7 @@
             android:layout_marginTop="40dp"
             android:background="@drawable/text_input_background"
             android:hint="@string/email_address"
+            android:textColor="@color/textColorBlack"
             android:inputType="textEmailAddress"
             android:padding="@dimen/edittext_padding"
             android:textStyle="bold" />
@@ -130,6 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:textColor="@color/textColorBlack"
             android:background="@drawable/text_input_background"
             android:hint="@string/project_on_github_link"
             android:inputType="textImeMultiLine"

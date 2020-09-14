@@ -32,7 +32,7 @@
 
         <activity
             android:name=".ui.SubmitActivity"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/ProjectSubmitTheme"
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
