@@ -66,16 +66,20 @@ public class SubmitActivity extends AppCompatActivity {
         }
         if (binding.editLastName.getText().toString().isEmpty()) {
             binding.editLastName.setError(ERROR_BLANK_FIELD);
+            return;
         }
         if (binding.editEmail.getText().toString().isEmpty()) {
             binding.editEmail.setError(ERROR_BLANK_FIELD);
+            return;
         }
         if (binding.editGithubLink.getText().toString().isEmpty()) {
             binding.editGithubLink.setError(ERROR_BLANK_FIELD);
+            return;
         }
         if (! (binding.editEmail.getText().toString().matches((EMAIL_PATERN1))
                 || (binding.editEmail.getText().toString().matches(EMAIL_PATERN2))) ) {
             binding.editEmail.setError(ERROR_EMAIL_INVALID);
+            return;
         }
 
         Retrofit retrofit = new Retrofit.Builder()
